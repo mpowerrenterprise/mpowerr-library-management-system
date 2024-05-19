@@ -3,7 +3,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $db_name = "class-system";
+    $db_name = "mpowerr_lms_db";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $db_name);
@@ -21,7 +21,7 @@
     $password_from_user = $_POST['password'];
 
 
-    $sql = "SELECT username, password from user_account where auto_id = '3'";
+    $sql = "SELECT username, password from user_account where auto_id = '1'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -65,6 +65,4 @@
 
 
     $conn->close();
-
-
 ?>

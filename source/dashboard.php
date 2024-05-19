@@ -4,7 +4,6 @@
 
 
     if ($_SESSION["permission"] != 'true'){
-        // Redirect to dashboard.php
         header("Location: index.php");
        die();
    
@@ -15,7 +14,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $db_name = "class-system";
+    $db_name = "mpowerr_lms_db";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $db_name);
@@ -30,13 +29,7 @@
     $sql = "SELECT * from student_details";
     $result = $conn->query($sql);
 
-
-
-
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +42,7 @@
 </head>
 <body>
 
-    <h1 style="text-align:center;">Register Students</h1>
+    <h1 style="text-align:center;">Students Management</h1>
     <hr>
 
 
