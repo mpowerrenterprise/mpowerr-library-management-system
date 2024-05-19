@@ -1,15 +1,5 @@
 <?php
 
-session_start();
-
-
-if ($_SESSION["permission"] != 'true'){
-    // Redirect to dashboard.php
-    header("Location: index.php");
-   die();
-
-}
-   
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -23,11 +13,14 @@ if ($_SESSION["permission"] != 'true'){
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $name = $_POST['name'];
-    $age = $_POST['age'];
-    $marks = $_POST['marks'];
+    $nic_no= $_POST['nic_no'];
+    $student_name = $_POST['student_name'];
+    $grade = $_POST['grade'];
+    $email= $_POST['email'];
+    $mobile_no = $_POST['mobile_no'];
+    $gender = $_POST['gender'];
 
-    $sql = "INSERT INTO student_details VALUES('','$name', $age, $marks)";
+    $sql = "INSERT INTO student_details VALUES('',$nic_no, '$student_name', $grade, '$email', $mobile_no, '$gender')";
 
     if ($conn->query($sql) === TRUE) {
         

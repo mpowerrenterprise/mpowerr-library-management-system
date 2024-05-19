@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    color: #f4f4f4;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+</style>
+<body>
+    <div class="dashboard">
+        <nav class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#reports">Reports</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <header>
+                <h1>Welcome to the Dashboard</h1>
+            </header>
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>This is the overview section of the dashboard.</p>
+            </section>
+            <section id="reports">
+                <h2>Reports</h2>
+                <p>This is the reports section of the dashboard.</p>
+            </section>
+            <section id="analytics">
+                <h2>Analytics</h2>
+                <p>This is the analytics section of the dashboard.</p>
+            </section>
+            <section id="settings">
+                <h2>Settings</h2>
+                <p>This is the settings section of the dashboard.</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

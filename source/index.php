@@ -1,19 +1,4 @@
 
-<?php
-
-  // Start the session
-  session_start();
-
-  if($_SESSION["permission"] == "true"){
-
-      // Redirect to dashboard.php
-      header("Location: dashboard.php");
-      exit; // Ensure no further code is executed after the redirect
-  }
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +18,7 @@
  <h2>Sign In</h2> 
 
 
- <form ACTION="authenticator.php", METHOD="post">
+ <form ACTION="C:/xampp/htdocs/mpowerr-library-management-system/source/php_controllers/authenticator.php", METHOD="post">
 
     <div class="form"> 
 

@@ -1,34 +1,21 @@
-
 <?php
-    session_start();
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db_name = "mpowerr_lms_db";
 
-    if ($_SESSION["permission"] != 'true'){
-        header("Location: index.php");
-       die();
-   
-   }
-    
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db_name);
 
-     
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db_name = "mpowerr_lms_db";
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $db_name);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-
-    
-    $sql = "SELECT * from student_details";
-    $result = $conn->query($sql);
-
+// Fetch student details
+$sql = "SELECT * FROM student_details";
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -36,74 +23,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Students Management</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-
-    <h1 style="text-align:center;">Students Management</h1>
+    <h1 class="text-center">Students Management</h1>
     <hr>
 
-
-    <form style="margin-left: 150px; margin-right: 150px;" ACTION="register.php" METHOD = "post">
+    <form style="margin-left: 150px; margin-right: 150px;" action="C:/xampp/htdocs/mpowerr-library-management-system/source/php_controllers/register.php" method="post">
         <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-            <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <label for="nameInput">NIC No</label>
+            <input name="name" type="text" class="form-control" id="nameInput" placeholder=" Ender NIC No">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Age</label>
-            <input name="age" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Age">
+            <label for="ageInput">Student Name</label>
+            <input name="age" type="text" class="form-control" id="ageInput" placeholder="Enter Student Name">
+        </div>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Marks</label>
-            <input name="marks" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Marks">
+            <label for="ageInput">Grade</label>
+            <input name="age" type="text" class="form-control" id="ageInput" placeholder="Enter Grade">
+        </div>
+        </div>
+        <div class="form-group">
+            <label for="ageInput">E-mail</label>
+            <input name="age" type="text" class="form-control" id="ageInput" placeholder="Enter E-mail Address">
+        </div>
+        </div>
+        <div class="form-group">
+            <label for="ageInput">Mobile N</label>
+            <input name="age" type="text" class="form-control" id="ageInput" placeholder="Enter Mobile No">
+        </div>
+        <div class="form-group">
+            <label for="marksInput">Gender</label>
+            <input name="marks" type="text" class="form-control" id="marksInput" placeholder="Enter the Gender">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-
-    <h1 style="text-align:center;">Class System Data</h1>
+    <h1 class="text-center">Student Management</h1>
     <hr>
 
-    <table style="width: 800px; margin-left:100px;" class="table table-dark" >
+    <table style="width: 800px; margin-left:100px;" class="table table-dark">
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Student Name</th>
-            <th scope="col">Age</th>
-            <th scope="col">Mars</th>
-            <th scope="col">Action</th>
+                <th scope="col">NIC No</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Mobile No</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            
-                if ($result->num_rows > 0) {
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-
-                        echo "<tr>";
-                        echo "<th scope='row'>". $row['name'] ."</th>";
-                        echo "<th scope='row'>". $row['age'] ."</th>";
-                        echo "<th scope='row'>". $row['marks'] ."</th>";
-                        echo "<td><a href='deletedata.php/?auto_id=".$row['auto_id']."' class='btn btn-danger'>Delete</a> | <a href='editdata.php/?auto_id=".$row['auto_id']."'class='btn btn-success'>Edit</button></a>";
-                        echo "</tr>";
-                    
-                        
-                    } 
-                } 
-            
+            if ($result->num_rows > 0) {
+                // Output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row['nic_no'] . "</td>";
+                    echo "<td>" . $row['student_name'] . "</td>";
+                    echo "<td>" . $row['grade'] . "</td>";
+                    echo "<td>" . $row['mobile_no'] . "</td>";
+                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['gender'] . "</td>";
+                    echo "<td><a href='deletedata.php?auto_id=" . $row['auto_id'] . "' class='btn btn-danger'>Delete</a> | <a href='editdata.php?auto_id=" . $row['auto_id'] . "' class='btn btn-success'>Edit</a></td>";
+                    echo "</tr>";
+                }
+            }
             ?>
-
-            </tbody>
-       
+        </tbody>
     </table>
 
-
-    <a href="logout.php" style='margin: 10px;' class="btn btn-primary btn-lg btn-block">Logout</a>
-
-
+    <a href="C:/xampp/htdocs/mpowerr-library-management-system/source/php_controllers/logout.php" style="margin: 10px;" class="btn btn-primary btn-lg btn-block">Logout</a>
 </body>
 </html>
