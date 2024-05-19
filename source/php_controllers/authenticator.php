@@ -1,5 +1,5 @@
 <?php
-include "db_con.php";
+include "db_connection.php";
    
 
     $username_from_db = "";
@@ -20,9 +20,7 @@ include "db_con.php";
             $password_from_db = $row['password'];
             
         } 
-    } else {
-        echo "0 results";
-    }
+    } 
 
 
     if($username_from_user == $username_from_db && $password_from_user == $password_from_db){
