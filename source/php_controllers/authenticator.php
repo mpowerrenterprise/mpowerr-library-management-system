@@ -1,18 +1,6 @@
 <?php
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db_name = "mpowerr_lms_db";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $db_name);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    
+include "db_con.php";
+   
 
     $username_from_db = "";
     $password_from_db = "";
@@ -47,7 +35,7 @@
         if($_SESSION["permission"] == "true"){
      
             // Redirect to dashboard.php
-            header("Location: dashboard.php");
+            header("Location: ../dashboard.php");
             exit; // Ensure no further code is executed after the redirect
 
 

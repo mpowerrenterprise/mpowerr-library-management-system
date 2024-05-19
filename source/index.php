@@ -18,7 +18,7 @@
  <h2>Sign In</h2> 
 
 
- <form ACTION="C:/xampp/htdocs/mpowerr-library-management-system/source/php_controllers/authenticator.php", METHOD="post">
+ <form ACTION="php_controllers/authenticator.php", METHOD="post">
 
     <div class="form"> 
 

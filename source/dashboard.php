@@ -30,7 +30,7 @@ $result = $conn->query($sql);
     <h1 class="text-center">Students Management</h1>
     <hr>
 
-    <form style="margin-left: 150px; margin-right: 150px;" action="C:/xampp/htdocs/mpowerr-library-management-system/source/php_controllers/register.php" method="post">
+    <form style="margin-left: 150px; margin-right: 150px;" action="php_controllers/register.php" method="post">
         <div class="form-group">
             <label for="nameInput">NIC No</label>
             <input name="name" type="text" class="form-control" id="nameInput" placeholder=" Ender NIC No">
@@ -96,6 +96,6 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 
-    <a href="C:/xampp/htdocs/mpowerr-library-management-system/source/php_controllers/logout.php" style="margin: 10px;" class="btn btn-primary btn-lg btn-block">Logout</a>
+    <a href="php_controllers/logout.php" style="margin: 10px;" class="btn btn-primary btn-lg btn-block">Logout</a>
 </body>
 </html>
