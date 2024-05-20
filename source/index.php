@@ -7,6 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+<style>
+
+.dash{
+    height: 800px;
+    width: 500px;
+}
+
+input{
+    height: 50px;
+    width: 40px;
+}
+
+</style>
 <body>
 
 <div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
@@ -23,6 +36,7 @@
     <div class="form"> 
 
     <div class="inputBox"> 
+        <div class="dash">
 
         <input type="text" name="username" required> <i>Username</i> 
 
@@ -49,7 +63,7 @@
 </form>
 
 </div> 
-
+</div> 
 </div> 
 
     </div>
