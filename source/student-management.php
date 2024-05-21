@@ -32,35 +32,21 @@
     
         <h1 class="text-center">Students Management</h1>
                 <hr>
-
-        <form style="margin-left: 150px; margin-right: 150px;" action="php_controllers/register.php" method="post">
-            <div class="form-group">
-                <label for="nicInput">NIC No</label>
-                <input name="nic" type="text" class="form-control" id="nicInput" placeholder="Enter NIC No">
-            </div>
-            <div class="form-group">
-                <label for="studentNameInput">Student Name</label>
-                <input name="student_name" type="text" class="form-control" id="studentNameInput" placeholder="Enter Student Name">
-            </div>
-            <div class="form-group">
-                <label for="gradeInput">Grade</label>
-                <input name="grade" type="text" class="form-control" id="gradeInput" placeholder="Enter Grade">
-            </div>
-            <div class="form-group">
-                <label for="emailInput">E-mail</label>
-                <input name="email" type="email" class="form-control" id="emailInput" placeholder="Enter E-mail Address">
-            </div>
-            <div class="form-group">
-                <label for="mobileInput">Mobile No</label>
-                <input name="mobile" type="text" class="form-control" id="mobileInput" placeholder="Enter Mobile No">
-            </div>
-            <div class="form-group">
-                <label for="genderInput">Gender</label>
-                <input name="gender" type="text" class="form-control" id="genderInput" placeholder="Enter Gender">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-
+                <form method="POST" action="php_controllers/register.php">
+                    <label for="Book_ISBN_NoInput">NIC Number</label><br>
+                        <input type="text" name="nic_no" placeholder="Ender NIC Number" required><br>
+                    <label for="Book_ISBN_NoInput">Student Name</label><br>
+                        <input type="text" name="student_name" placeholder="Ender Student Name" required><br>
+                    <label for="Book_ISBN_NoInput">Grade</label><br>
+                        <input type="number" name="Grade" placeholder="Ender Grade" required><br>
+                    <label for="Book_ISBN_NoInput">E-mail</label><br>
+                        <input type="email" name="Email" placeholder="Ender E-mail" required><br>
+                    <label for="Book_ISBN_NoInput">Mobile Number</label><br>
+                        <input type="text" name="mobile_no" placeholder="Ender Mobile Number" required><br>
+                    <label for="Book_ISBN_NoInput">Gender</label><br>
+                        <input type="text" name="gender" placeholder="Ender Gender" required><br>
+                        <button type="submit">Submit</button><br>
+                </form>
         <h1 class="text-center">Student Details</h1>
         <hr>
 
