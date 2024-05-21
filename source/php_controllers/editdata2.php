@@ -5,7 +5,7 @@ session_start();
 
 if ($_SESSION["permission"] != 'true'){
     // Redirect to dashboard.php
-    header("Location: index.php");
+    header("Location: ./index.php");
    die();
 
 }
@@ -13,7 +13,7 @@ if ($_SESSION["permission"] != 'true'){
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $db_name = "class-system";
+    $db_name = "mpowerr_lms_db";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $db_name);
@@ -24,16 +24,19 @@ if ($_SESSION["permission"] != 'true'){
     }
 
     $auto_id = $_POST['auto_id'];
-    $new_name = $_POST['name'];
-    $new_age = $_POST['age'];
-    $new_marks = $_POST['marks'];
+    $new_nic_no = $_POST['nic_no'];
+    $new_student_name = $_POST['student_name'];
+    $new_grade = $_POST['grade'];
+    $new_mobile_no = $_POST['mobile_no'];
+    $new_email = $_POST['email'];
+    $new_gender = $_POST['gender'];
 
-    $sql = "UPDATE student_details SET name = '$new_name', age = '$new_age', marks = '$new_marks' WHERE auto_id = '$auto_id'";
+    $sql = "UPDATE student_details SET nic_no = '$new_nic_no ',  student_name = ' $new_student_name ', grade = '$new_grade',  mobile_no = ' $new_student_name ',  email = ' $new_email',  gender = ' $new_gender ' WHERE auto_id = '$auto_id'";
 
     if ($conn->query($sql) === TRUE) {
         
             // Redirect to dashboard.php
-        header("Location: dashboard.php");
+        header("Location: ./student_management.php");
         exit; // Ensure no further code is executed after the redirect
 
     } else {
