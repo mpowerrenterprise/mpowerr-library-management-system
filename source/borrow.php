@@ -7,32 +7,20 @@
 
                     <form style="margin-left: 150px; margin-right: 150px;" action="php_controllers/register.php" method="post">
                         <div class="form-group">
-                            <label for="nicInput"> Student NIC No</label>
-                            <input name="Student_NIC_No" type="text" class="form-control" id="Student_NIC_NoInput" placeholder="Enter Student NIC No">
+                            <label for="Book_ISBN_NoInput">Book ISBN No</label>
+                            <input name="Book_ISBN_No" type="text" class="form-control" id="Book_ISBN_NoInput" placeholder="Enter Book ISBN No">
                         </div>
                         <div class="form-group">
-                            <label for="BookNameInput">Book Name</label>
-                            <input name="Book_name" type="text" class="form-control" id="Book_NameInput" placeholder="Enter Book Name">
+                            <label for="StatusInput">Status</label>
+                            <input name="Status" type="text" class="form-control" id="StatusInput" placeholder="Enter Status">
                         </div>
                         <div class="form-group">
-                            <label for="BookNameInput">ISBN No</label>
-                            <input name="Book_name" type="text" class="form-control" id="Book_NameInput" placeholder="Enter Book Name">
+                            <label for="Student_Nic_NoInput">Student Nic No</label>
+                            <input name="Student_Nic_No" type="text" class="form-control" id="Student_Nic_NoInput" placeholder="Enter Student Nic No">
                         </div>
                         <div class="form-group">
-                            <label for="GenresInput">Genres</label>
-                            <input name="Genres" type="text" class="form-control" id="GenresInput" placeholder="Enter Genres">
-                        </div>
-                        <div class="form-group">
-                            <label for="AutherInput">Auther</label>
-                            <input name="Auther" type="email" class="form-control" id="AutherInput" placeholder="Enter Auther">
-                        </div>
-                        <div class="form-group">
-                            <label for="PriceInput">Price</label>
-                            <input name="Price" type="text" class="form-control" id="PriceInput" placeholder="Enter Book Price">
-                        </div>
-                        <div class="form-group">
-                            <label for="Release_DateInput">Release Date</label>
-                            <input name="Release_Date" type="text" class="form-control" id="Release_Date" placeholder="Enter Release Date">
+                            <label for="Handover_DateInput">Handover Date</label>
+                            <input name="Handover_Date" type="text" class="form-control" id="Handover DateInput" placeholder="Enter Handover Date">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -43,14 +31,11 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th scope="col">Student NIC No</th>
-                                <th scope="col">Book Name</th>
-                                <th scope="col">ISBN No</th>
-                                <th scope="col">Auther</th>
-                                <th scope="col">Genres</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Release Date</th>
+                                <th scope="col">Book ISBN No</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Student Nic</th>
+                                <th scope="col">Handover Date</th>
+                                <th scope="col">Returned</th>s
                             </tr>
                         </thead>
                         <tbody>
