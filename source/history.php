@@ -5,7 +5,7 @@
             <h1 class="text-center">History Management</h1>
                     <hr>
 
-                    <form style="margin-left: 150px; margin-right: 150px;" action="php_controllers/register.php" method="post">
+                    <form style="margin-left: 150px; margin-right: 150px;" method="POST" action="register.php">
                         <div class="form-group">
                             <label for="Book_ISBN_NoInput">Book ISBN No</label>
                             <input name="Book_ISBN_No" type="text" class="form-control" id="Book_ISBN_NoInput" placeholder="Enter Book ISBN No">

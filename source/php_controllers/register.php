@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+
+if ($_SESSION["permission"] != 'true'){
+    // Redirect to index.php
+    header("Location: ./index.php");
+    die();
+}
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,11 +20,6 @@ $conn = new mysqli($servername, $username, $password, $db_name);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// Debugging: Check received POST data
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
 
 // Check if POST variables are set
 if (isset($_POST['nic_no'], $_POST['student_name'], $_POST['grade'], $_POST['email'], $_POST['mobile_no'], $_POST['gender'])) {
@@ -33,12 +36,9 @@ if (isset($_POST['nic_no'], $_POST['student_name'], $_POST['grade'], $_POST['ema
 
     // Execute the statement
     if ($stmt->execute()) {
-        // Get the referring URL
-        $previousPage = $_SERVER['HTTP_REFERER'];
-        
         // Redirect back to the referring URL
-        header("Location: $previousPage");
-        exit; // Ensure no further code is executed after the redirect
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit;
     } else {
         echo "Error: " . $stmt->error;
     }
