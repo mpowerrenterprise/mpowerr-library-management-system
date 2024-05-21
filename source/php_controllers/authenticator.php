@@ -33,7 +33,7 @@ include "db_connection.php";
         if($_SESSION["permission"] == "true"){
      
             // Redirect to dashboard.php
-            header("Location: ../dashboard.php");
+            header("Location: ../student.php");
             exit; // Ensure no further code is executed after the redirect
 
 

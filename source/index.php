@@ -1,4 +1,18 @@
+<?php
 
+  // Start the session
+  session_start();
+
+  if($_SESSION["permission"] == "true"){
+
+      // Redirect to dashboard.php
+      header("Location: student.php");
+      exit; // Ensure no further code is executed after the redirect
+
+
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
