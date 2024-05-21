@@ -2,7 +2,7 @@
 
             <div class="container-fluid">
              
-            <h1 class="text-center">Students Management</h1>
+            <h1 class="text-center">Borrow Management</h1>
                     <hr>
 
                     <form style="margin-left: 150px; margin-right: 150px;" action="php_controllers/register.php" method="post">
