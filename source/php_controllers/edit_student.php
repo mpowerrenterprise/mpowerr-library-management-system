@@ -24,7 +24,7 @@ if ($_SESSION["permission"] != 'true'){
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $auto_id = $_GET['auto_id'];
+    $auto_id = 'student_details';
 
 
     $sql = "SELECT id, nic_no, student_name, grade, email, mobile_no, gender FROM student_details";

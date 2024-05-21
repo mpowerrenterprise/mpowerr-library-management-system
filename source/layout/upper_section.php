@@ -22,7 +22,23 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
+<style>
+        .scroll-sidebar {
+            height: calc(100vh - 70px); /* Adjust based on your header height */
+            overflow-y: auto;
+        }
+        .sidebar-nav ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-nav ul li:last-child {
+            margin-top: auto;
+        }
+        .mdi mdi-menu font-24{
+            text-align: center;
+        }
+    </style>
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -47,8 +63,6 @@
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
                         <i class="ti-menu ti-close"></i>
                     </a>
-                    <h5 style="color:white;">Mpowerr Library Management System</h5>
-
                     <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="ti-more"></i>
                     </a>
@@ -63,7 +77,7 @@
                     <ul class="navbar-nav float-left mr-auto">
                         <li class="nav-item d-none d-md-block">
                             <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar">
-                                <i class="mdi mdi-menu font-24"></i>
+                                <i class="mdi mdi-menu font-24">Mpowerr Library Management System</i>
                             </a>
                         </li>
                     </ul>
