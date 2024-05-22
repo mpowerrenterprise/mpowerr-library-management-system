@@ -54,7 +54,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Student records will go here -->
+                        <?php
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo "<tr>
+                                        <td>{$row['isbn_no']}</td>
+                                        <td>{$row['book_name']}</td>
+                                        <td>{$row['auther']}</td>
+                                        <td>{$row['price']}</td>
+                                        <td>{$row['release_date']}</td>
+                                        <td>{$row['genres']}</td>
+                                        <td>
+                                            <a href='php_controllers/edit_books.php?auto_id={$row['auto_id']}',  class='btn btn-primary'>Edit</a>
+                                            <a href='php_controllers/delete_books.php?auto_id={$row['auto_id']}', class='btn btn-danger'>Delete</a>
+                                        </td>
+                                    </tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='7' class='text-center'>No records found</td></tr>";
+                        }
+                        ?>                        
                         </tbody>
                     </table>
 
