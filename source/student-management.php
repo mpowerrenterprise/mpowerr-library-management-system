@@ -1,4 +1,7 @@
 <?php
+
+include "php_controllers/db_connection.php";
+
 session_start();
 
 if ($_SESSION["permission"] != 'true'){
@@ -7,18 +10,6 @@ if ($_SESSION["permission"] != 'true'){
     die();
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db_name = "mpowerr_lms_db";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db_name);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 $sql = "SELECT * FROM student_details";
 $result = $conn->query($sql);

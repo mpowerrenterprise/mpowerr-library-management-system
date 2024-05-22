@@ -4,17 +4,11 @@ session_start();
 
 if ($_SESSION["permission"] != 'true'){
     // Redirect to index.php
-    header("Location: index.php");
+    header("Location: ./index.php");
     die();
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db_name = "mpowerr_lms_db";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db_name);
+include "db_connection.php";
 
 // Check connection
 if ($conn->connect_error) {
@@ -31,7 +25,7 @@ if (isset($_POST['isbn_no'], $_POST['book_name'], $_POST['auther'], $_POST['pric
     $genres = $_POST['genres'];
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO student_details (nic_no, student_name, grade, email, mobile_no, gender) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO books_details (isbn_no, book_name, auther, price, release_date, genres) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssisss", $isbn_no, $book_name, $auther, $price, $release_date, $genres);
 
     // Execute the statement

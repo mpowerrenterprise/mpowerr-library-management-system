@@ -9,13 +9,7 @@ if ($_SESSION["permission"] != 'true'){
    die();
 
 }
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db_name = "mpowerr_lms_db";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $db_name);
+include "db_connection.php";
 
     // Check connection
     if ($conn->connect_error) {

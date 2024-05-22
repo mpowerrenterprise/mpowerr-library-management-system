@@ -1,3 +1,21 @@
+<?php
+
+include "php_controllers/db_connection.php";
+
+session_start();
+
+if ($_SESSION["permission"] != 'true'){
+    // Redirect to index.php
+    header("Location: index.php");
+    die();
+}
+
+
+$sql = "SELECT * FROM student_details";
+$result = $conn->query($sql);
+
+?>
+
 <?php include "layout/upper_section.php";?>
 
             <div class="container-fluid">
