@@ -83,8 +83,8 @@ $result = $conn->query($sql);
                         <td>{$row['email']}</td>
                         <td>{$row['gender']}</td>
                         <td>
-                            <a href='php_controllers/edit_student.php', 'id={$row['auto_id']}' class='btn btn-primary'>Edit</a>
-                            <a href='php_controllers/delete_student.php', 'id={$row['auto_id']}' class='btn btn-danger'>Delete</a>
+                            <a href='php_controllers/edit_student.php?auto_id={$row['auto_id']}',  class='btn btn-primary'>Edit</a>
+                            <a href='php_controllers/deletedata.php?auto_id={$row['auto_id']}', class='btn btn-danger'>Delete</a>
                         </td>
                     </tr>";
             }

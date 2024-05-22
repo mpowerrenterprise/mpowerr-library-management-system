@@ -4,7 +4,7 @@ session_start();
 
 if ($_SESSION["permission"] != 'true'){
     // Redirect to index.php
-    header("Location: ./index.php");
+    header("Location: index.php");
     die();
 }
 

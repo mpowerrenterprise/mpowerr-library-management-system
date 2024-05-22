@@ -4,7 +4,7 @@ session_start();
    
 if ($_SESSION["permission"] != 'true'){
      // Redirect to dashboard.php
-     header("Location: index.php");
+     header("Location: ../index.php");
     die();
 
 }
@@ -14,7 +14,7 @@ if ($_SESSION["permission"] != 'true'){
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $db_name = "class-system";
+    $db_name = "mpowerr_lms_db";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $db_name);

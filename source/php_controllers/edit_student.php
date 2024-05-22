@@ -19,6 +19,7 @@ $conn = new mysqli($servername, $username, $password, $db_name);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
 $auto_id = $_GET['auto_id'];
 
 // Fetch the specific student record
@@ -32,16 +33,20 @@ $mobile_no_from_db = "";
 $email_from_db = "";
 $gender_from_db = "";
 
- if ($result->num_rows > 0) 
+    if ($result->num_rows > 0) {
         // output data of each row
-    while($row = $result->fetch_assoc()) 
-        $row = $result->fetch_assoc();
-        $nic_no_db = $row['nic_no'];
-        $student_name_db = $row['student_name'];
-        $grade_db = $row['grade'];
-        $mobile_no_db = $row['mobile_no'];
-        $email_db = $row['email'];
-        $gender_db = $row['gender'];
+        while($row = $result->fetch_assoc()) {
+
+            $nic_no_from_db = $row['nic_no'];
+            $student_name_from_db = $row['student_name'];
+            $grade_from_db = $row['grade'];
+            $mobile_no_from_db = $row['mobile_no'];
+            $email_from_db = $row['email'];
+            $gender_from_db = $row['gender'];
+    
+        } 
+    } 
+
 ?>
 
 <!DOCTYPE html>
@@ -58,27 +63,27 @@ $gender_from_db = "";
     <form style="margin-left: 150px; margin-right: 150px;" action="editdata2.php" method="post">
         <div class="form-group">
             <label for="nicNo">NIC No</label>
-            <input name="nic_no" type="text" value="<?php echo $nic_no_db; ?>" class="form-control" id="nicNo" placeholder="Enter NIC No">
+            <input name="nic_no" type="text" value="<?php echo $nic_no_from_db; ?>" class="form-control" id="nicNo" placeholder="Enter NIC No">
         </div>
         <div class="form-group">
             <label for="studentName">Student Name</label>
-            <input name="student_name" type="text" value="<?php echo $student_name_db; ?>" class="form-control" id="studentName" placeholder="Enter Student Name">
+            <input name="student_name" type="text" value="<?php echo $student_name_from_db; ?>" class="form-control" id="studentName" placeholder="Enter Student Name">
         </div>
         <div class="form-group">
             <label for="grade">Grade</label>
-            <input name="grade" type="text" value="<?php echo $grade_db; ?>" class="form-control" id="grade" placeholder="Enter Grade">
+            <input name="grade" type="text" value="<?php echo $grade_from_db; ?>" class="form-control" id="grade" placeholder="Enter Grade">
         </div>
         <div class="form-group">
             <label for="mobileNo">Mobile No</label>
-            <input name="mobile_no" type="text" value="<?php echo $mobile_no_db; ?>" class="form-control" id="mobileNo" placeholder="Enter Mobile No">
+            <input name="mobile_no" type="text" value="<?php echo $mobile_no_from_db; ?>" class="form-control" id="mobileNo" placeholder="Enter Mobile No">
         </div>
         <div class="form-group">
             <label for="email">E-mail</label>
-            <input name="email" type="text" value="<?php echo $email_db; ?>" class="form-control" id="email" placeholder="Enter E-mail">
+            <input name="email" type="text" value="<?php echo $email_from_db; ?>" class="form-control" id="email" placeholder="Enter E-mail">
         </div>
         <div class="form-group">
             <label for="gender">Gender</label>
-            <input name="gender" type="text" value="<?php echo $gender_db; ?>" class="form-control" id="gender" placeholder="Enter Gender">
+            <input name="gender" type="text" value="<?php echo $gender_from_db; ?>" class="form-control" id="gender" placeholder="Enter Gender">
         </div>
         <input type="hidden" name="auto_id" value="<?php echo $auto_id; ?>">
         <button type="submit" class="btn btn-primary">Edit</button>

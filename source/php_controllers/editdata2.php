@@ -9,7 +9,6 @@ if ($_SESSION["permission"] != 'true'){
    die();
 
 }
-
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -36,13 +35,11 @@ if ($_SESSION["permission"] != 'true'){
     if ($conn->query($sql) === TRUE) {
         
             // Redirect to dashboard.php
-        header("Location: ./student_management.php");
+        header("Location: ../student-management.php");
         exit; // Ensure no further code is executed after the redirect
 
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-
-
+    
 ?>
