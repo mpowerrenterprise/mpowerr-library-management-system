@@ -2,8 +2,8 @@
 
 session_start();
 
-if ($_SESSION["permission"] != 'true'){
-    // Redirect to index.php
+if ($_SESSION["permission"] != 'true') {
+    // Redirect to dashboard.php
     header("Location: ./index.php");
     die();
 }
@@ -15,35 +15,36 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Check if POST variables are set
-if (isset($_POST['isbn_no'], $_POST['book_name'], $_POST['auther'], $_POST['price'], $_POST['release_date'], $_POST['genres'])) {
-    $isbn_no = $_POST['isbn_no'];
-    $book_name = $_POST['book_name'];
-    $auther = $_POST['auther'];
-    $price = $_POST['price'];
-    $release_date = $_POST['release_date'];
-    $genres = $_POST['genres'];
+$book_name = $_POST['book_name'];
+$isbn_no = $_POST['isbn_no'];
+$genres = $_POST['genres'];
+$author = $_POST['author'];
+$price = $_POST['price'];
+$release_date = $_POST['release_date'];
 
-    // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO books_details (isbn_no, book_name, auther, price, release_date, genres) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssisss", $isbn_no, $book_name, $auther, $price, $release_date, $genres);
+// Prepare the SQL statement
+$sql = "INSERT INTO books_details (isbn_no, book_name, author, price, release_date, genres) VALUES (?, ?, ?, ?, ?, ?)";
+$stmt = $conn->prepare($sql);
 
-    // Execute the statement
-    if ($stmt->execute()) {
-        // Redirect back to the referring URL
-        header("Location: " . $_SERVER['HTTP_REFERER']);
-        exit;
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
-    // Close the statement
-    $stmt->close();
-} else {
-    echo "Error: Required form data is missing.";
+// Check if prepare() failed and output error
+if ($stmt === false) {
+    die("Error preparing the SQL statement: " . $conn->error);
 }
 
-// Close the connection
+// Bind the parameters
+$stmt->bind_param("ssssss", $isbn_no, $book_name, $author, $price, $release_date, $genres);
+
+if ($stmt->execute()) {
+    // Get the referring URL
+    $previousPage = $_SERVER['HTTP_REFERER'];
+    // Redirect back to the referring URL
+    header("Location: $previousPage");
+    exit; // Ensure no further code is executed after the redirect
+} else {
+    echo "Error: " . $stmt->error;
+}
+
+$stmt->close();
 $conn->close();
 
 ?>

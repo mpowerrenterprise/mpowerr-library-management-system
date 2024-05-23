@@ -27,32 +27,28 @@ if (!$result) {
 
     <form style="margin-left: 150px; margin-right: 150px;" action="php_controllers/register_books.php" method="post">
         <div class="form-group">
-            <label for="Student_NIC_NoInput">Student NIC No</label>
-            <input name="Student_NIC_No" type="text" class="form-control" id="Student_NIC_NoInput" placeholder="Student NIC No">
-        </div>
-        <div class="form-group">
             <label for="BookNameInput">Book Name</label>
-            <input name="Book_name" type="text" class="form-control" id="Book_NameInput" placeholder="Enter Book Name">
+            <input name="book_name" type="text" class="form-control" id="Book_NameInput" placeholder="Enter Book Name">
         </div>
         <div class="form-group">
             <label for="ISBNNoInput">ISBN No</label>
-            <input name="ISBN_No" type="text" class="form-control" id="ISBN_NoInput" placeholder="Enter ISBN No">
+            <input name="isbn_no" type="text" class="form-control" id="ISBN_NoInput" placeholder="Enter ISBN No">
         </div>
         <div class="form-group">
             <label for="GenresInput">Genres</label>
-            <input name="Genres" type="text" class="form-control" id="GenresInput" placeholder="Enter Genres">
+            <input name="genres" type="text" class="form-control" id="GenresInput" placeholder="Enter Genres">
         </div>
         <div class="form-group">
-            <label for="AutherInput">Author</label>
-            <input name="Auther" type="text" class="form-control" id="AutherInput" placeholder="Enter Author">
+            <label for="AuthorInput">Author</label>
+            <input name="author" type="text" class="form-control" id="AuthorInput" placeholder="Enter Author">
         </div>
         <div class="form-group">
             <label for="PriceInput">Price</label>
-            <input name="Price" type="text" class="form-control" id="PriceInput" placeholder="Enter Book Price">
+            <input name="price" type="text" class="form-control" id="PriceInput" placeholder="Enter Book Price">
         </div>
         <div class="form-group">
             <label for="Release_DateInput">Release Date</label>
-            <input name="Release_Date" type="text" class="form-control" id="Release_Date" placeholder="Enter Release Date">
+            <input name="release_date" type="text" class="form-control" id="Release_Date" placeholder="Enter Release Date">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -79,7 +75,7 @@ if (!$result) {
                 echo "<tr>
                         <td>{$row['book_name']}</td>
                         <td>{$row['isbn_no']}</td>
-                        <td>{$row['auther']}</td>
+                        <td>{$row['author']}</td>
                         <td>{$row['genres']}</td>
                         <td>{$row['price']}</td>
                         <td>{$row['release_date']}</td>
