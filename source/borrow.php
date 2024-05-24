@@ -1,16 +1,40 @@
 <?php
+
 include "php_controllers/db_connection.php";
 
 session_start();
 
-if ($_SESSION["permission"] != 'true') {
+if ($_SESSION["permission"] != 'true'){
     // Redirect to index.php
     header("Location: index.php");
     die();
 }
 
+// Fetch books data
+$books_sql = "SELECT isbn_no, book_name FROM books_details";
+$books_result = $conn->query($books_sql);
+
+$books = [];
+if ($books_result->num_rows > 0) {
+    while ($row = $books_result->fetch_assoc()) {
+        $books[] = $row;
+    }
+}
+
+// Fetch students data
+$students_sql = "SELECT nic_no, student_name FROM student_details";
+$students_result = $conn->query($students_sql);
+
+$students = [];
+if ($students_result->num_rows > 0) {
+    while ($row = $students_result->fetch_assoc()) {
+        $students[] = $row;
+    }
+}
+
 $sql = "SELECT * FROM borrows";
 $result = $conn->query($sql);
+
 ?>
 
 <?php include "layout/upper_section.php";?>
@@ -24,6 +48,9 @@ $result = $conn->query($sql);
             <label for="Book_ISBN_NoInput">Book ISBN No</label>
             <select name="Book_ISBN_No" class="form-control" id="Book_ISBN_NoInput">
                 <option value="">Select Book ISBN</option>
+                <?php foreach ($books as $book): ?>
+                    <option value="<?php echo $book['isbn_no']; ?>"><?php echo $book['isbn_no'] . " - " . $book['book_name']; ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
@@ -34,6 +61,9 @@ $result = $conn->query($sql);
             <label for="Student_Nic_NoInput">Student Nic No</label>
             <select name="Student_Nic_No" class="form-control" id="Student_Nic_NoInput">
                 <option value="">Select Student NIC</option>
+                <?php foreach ($students as $student): ?>
+                    <option value="<?php echo $student['nic_no']; ?>"><?php echo $student['nic_no'] . " - " . $student['student_name']; ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
@@ -43,7 +73,7 @@ $result = $conn->query($sql);
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <h1 class="text-center">Borrow Details</h1>
+    <h1 class="text-center">Student Details</h1>
     <hr>
 
     <table class="table table-dark">
@@ -65,3 +95,9 @@ $result = $conn->query($sql);
                     <td><?php echo $row['handover_date']; ?></td>
                     <td><?php echo $row['returned'] ? 'Yes' : 'No'; ?></td>
                 </tr>
+            <?php endwhile; ?>
+        </tbody>
+    </table>
+</div>
+
+<?php include "layout/bottom_section.php"; ?>
