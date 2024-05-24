@@ -28,14 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($borrow) {
         // Insert into history
         $history_sql = "INSERT INTO history (book_isbn_no, student_nic, handover_date, returned_date)
-                        VALUES (?, ?, ?, ?, NOW())";
+                        VALUES (?, ?, ?, NOW())";
         $history_stmt = $conn->prepare($history_sql);
 
         if ($history_stmt === false) {
             die('Error preparing the history SQL statement: ' . $conn->error);
         }
 
-        $history_stmt->bind_param("ssss", $borrow['book_isbn_no'], $borrow['student_nic'], $borrow['handover_date']);
+        $history_stmt->bind_param("sss", $borrow['book_isbn_no'], $borrow['student_nic'], $borrow['handover_date']);
         $history_stmt->execute();
 
         // Delete from borrows

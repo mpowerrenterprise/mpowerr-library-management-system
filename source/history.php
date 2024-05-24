@@ -25,7 +25,6 @@ $result = $conn->query($sql);
         <thead>
             <tr>
                 <th scope="col">Book ISBN No</th>
-                <th scope="col">Status</th>
                 <th scope="col">Student Nic</th>
                 <th scope="col">Handover Date</th>
                 <th scope="col">Returned Date</th>
@@ -35,7 +34,6 @@ $result = $conn->query($sql);
             <?php while ($row = $result->fetch_assoc()): ?>
                 <tr>
                     <td><?php echo $row['book_isbn_no']; ?></td>
-                    <td><?php echo $row['status']; ?></td>
                     <td><?php echo $row['student_nic']; ?></td>
                     <td><?php echo $row['handover_date']; ?></td>
                     <td><?php echo $row['returned_date']; ?></td>
@@ -44,7 +42,6 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 
-    <a href="php_controllers/logout.php" class="btn btn-secondary">Logout</a>
 </div>
 
 <?php include "layout/bottom_section.php"; ?>
