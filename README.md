@@ -6,15 +6,15 @@
 
 ## Key Features
 
-  1. User Authentication: Secure login and registration system for administrators and library members.
+ #### 1. User Authentication: Secure login and registration system for administrators and library members.
      
-  2. Book Management: Add, update, delete, and search for books in the library database.
+#### 2. Book Management: Add, update, delete, and search for books in the library database.
    
-  3. Member Management: Manage library member details including registration, updates, and member status.
+#### 3. Member Management: Manage library member details including registration, updates, and member status.
    
-  4. Borrow and Return: Track borrowing and returning of books with due dates and overdue alerts.
+#### 4. Borrow and Return: Track borrowing and returning of books with due dates and overdue alerts.
   
-  5. Search Functionality: Advanced search functionality for books and members using various criteria.
+#### 5. Search Functionality: Advanced search functionality for books and members using various criteria.
 
 ## Technologies Used
 
