@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirect to borrows page
-    header("Location: ../borrows.php");
+    header("Location: ../borrow.php");
     die();
 }
 ?>
