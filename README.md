@@ -63,7 +63,23 @@
 #### Admin Panel
 
 - Login: Admins can log in using their credentials.
+  
 - Dashboard: Overview of the library's status, including the number of books, members, and active borrows.
+  
 - Book Management: Add new books, update book details, delete books, and search for books.
+  
 - Member Management: Register new members, update member details, and view member information.
+  
 - Borrow and Return: Manage the borrowing and returning process, including tracking due dates and overdue books.
+
+## Member Interface
+
+- Registration: New users can register to become library members.
+  
+- Login: Members can log in using their credentials.
+  
+- Book Search: Search for books using various criteria such as title, author, genre, etc.
+  
+- Borrow Books: Request to borrow available books.
+  
+- Return Books: Track and return borrowed books.
