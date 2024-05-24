@@ -83,7 +83,7 @@ if ($result->num_rows > 0) {
                 <td>{$row['release_date']}</td>
                 <td>
                     <a href='php_controllers/books_edit.php?auto_id={$row['auto_id']}' class='btn btn-primary'>Edit</a>
-                    <a href='php_controllers/delete_books.php?auto_id={$row['auto_id']}' class='btn btn-danger'>Delete</a>
+                    <a href='php_controllers/books_delete_data.php?auto_id={$row['auto_id']}' class='btn btn-danger'>Delete</a>
                 </td>
               </tr>";
         }
