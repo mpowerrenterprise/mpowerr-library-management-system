@@ -8,13 +8,7 @@ if ($_SESSION["permission"] != 'true'){
    die();
 
 }
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db_name = "class-system";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $db_name);
+include "db_connection.php";
 
     // Check connection
     if ($conn->connect_error) {
@@ -63,7 +57,7 @@ if ($_SESSION["permission"] != 'true'){
     <h1 style="text-align:center;">Edit Book Details</h1>
     <hr>
 
-    <form style="margin-left: 150px; margin-right: 150px;" ACTION="/class-system/editdata2.php" METHOD = "post">
+    <form style="margin-left: 150px; margin-right: 150px;" ACTION="book_edit_2.php" METHOD = "post">
         <div class="form-group">
             <label for="exampleInputEmail1">Book Name</label>
             <input name="book_name" type="text" value="<?php echo $book_name_from_db?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Book Name">
@@ -71,11 +65,11 @@ if ($_SESSION["permission"] != 'true'){
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">ISBN No</label>
-            <input name="isbn_no" type="text" value="<?php echo $isbn_no_from_db?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Age">
+            <input name="isbn_no" type="text" value="<?php echo $isbn_no_from_db?>" class="form-control" id="exampleInputPassword1" placeholder="Enter ISBN No">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Author</label>
-            <input name="marks" type="text" value="<?php echo $author_from_db?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Author">
+            <input name="author" type="text" value="<?php echo $author_from_db?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Author">
         </div>
 
         <div class="form-group">
@@ -83,7 +77,7 @@ if ($_SESSION["permission"] != 'true'){
             <input name="price" type="text" value="<?php echo $price_from_db?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Book Price">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Age</label>
+            <label for="exampleInputPassword1">Release Date</label>
             <input name="release_date" type="text" value="<?php echo $release_date_from_db?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Age">
         </div>
         <div class="form-group">
