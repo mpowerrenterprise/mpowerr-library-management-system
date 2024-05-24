@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="dashboard_assets/assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dashboard_assets/assets/images/logo.png">
     <title>Mpowerr Library Management System</title>
     <!-- Custom CSS -->
     <link href="dashboard_assets/assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
