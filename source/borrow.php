@@ -54,10 +54,6 @@ $result = $conn->query($sql);
             </select>
         </div>
         <div class="form-group">
-            <label for="StatusInput">Status</label>
-            <input name="Status" type="text" class="form-control" id="StatusInput" placeholder="Enter Status">
-        </div>
-        <div class="form-group">
             <label for="Student_Nic_NoInput">Student Nic No</label>
             <select name="Student_Nic_No" class="form-control" id="Student_Nic_NoInput">
                 <option value="">Select Student NIC</option>
@@ -80,7 +76,6 @@ $result = $conn->query($sql);
         <thead>
             <tr>
                 <th scope="col">Book ISBN No</th>
-                <th scope="col">Status</th>
                 <th scope="col">Student Nic</th>
                 <th scope="col">Handover Date</th>
                 <th scope="col">Returned</th>
@@ -90,10 +85,14 @@ $result = $conn->query($sql);
             <?php while ($row = $result->fetch_assoc()): ?>
                 <tr>
                     <td><?php echo $row['book_isbn_no']; ?></td>
-                    <td><?php echo $row['status']; ?></td>
-                    <td><?php echo $row['student_nic_no']; ?></td>
+                    <td><?php echo $row['student_nic']; ?></td>
                     <td><?php echo $row['handover_date']; ?></td>
-                    <td><?php echo $row['returned'] ? 'Yes' : 'No'; ?></td>
+                    <td>
+                        <form method="POST" action="php_controllers/return.php">
+                            <input type="hidden" name="auto_id" value="<?php echo $row['auto_id']; ?>">
+                            <button type="submit" class="btn btn-primary">Returned</button>
+                        </form>
+                    </td>
                 </tr>
             <?php endwhile; ?>
         </tbody>

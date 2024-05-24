@@ -2,7 +2,7 @@
 
 session_start();
 
-if ($_SESSION["permission"] != 'true'){
+if ($_SESSION["permission"] != 'true') {
     // Redirect to index.php
     header("Location: index.php");
     die();
@@ -16,15 +16,14 @@ if ($conn->connect_error) {
 }
 
 // Check if POST variables are set
-if (isset($_POST['book_isbn_no'], $_POST['student_nic'], $_POST['handover_date'], $_POST['status'] )) {
-    $book_isbn_no = $_POST['book_isbn_no'];
-    $student_nic = $_POST['student_nic'];
-    $handover_date = $_POST['handover_date'];
-    $status = $_POST['status'];
+if (isset($_POST['Book_ISBN_No'], $_POST['Student_Nic_No'], $_POST['Handover_Date'])) {
+    $book_isbn_no = $_POST['Book_ISBN_No'];
+    $student_nic = $_POST['Student_Nic_No'];
+    $handover_date = $_POST['Handover_Date'];
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO borrows (book_isbn_no, student_nic, handover_date, status) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssisss", $book_isbn_no, $student_nic, $handover_date, $status);
+    $stmt = $conn->prepare("INSERT INTO borrows (book_isbn_no, student_nic, handover_date) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $book_isbn_no, $student_nic, $handover_date);
 
     // Execute the statement
     if ($stmt->execute()) {

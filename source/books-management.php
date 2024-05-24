@@ -44,7 +44,7 @@ if (!$result) {
         </div>
         <div class="form-group">
             <label for="PriceInput">Price</label>
-            <input name="price" type="text" class="form-control" id="PriceInput" placeholder="Enter Book Price">
+            <input name="price" class="form-control" id="PriceInput" placeholder="Enter Book Price">
         </div>
         <div class="form-group">
             <label for="Release_DateInput">Release Date</label>
