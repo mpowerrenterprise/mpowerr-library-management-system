@@ -43,7 +43,7 @@ $result = $conn->query($sql);
     <h1 class="text-center">Borrow Management</h1>
     <hr>
 
-    <form style="margin-left: 150px; margin-right: 150px;" method="POST" action="register.php">
+    <form style="margin-left: 150px; margin-right: 150px;" method="POST" action="php_controllers/borrows_register.php">
         <div class="form-group">
             <label for="Book_ISBN_NoInput">Book ISBN No</label>
             <select name="Book_ISBN_No" class="form-control" id="Book_ISBN_NoInput">
