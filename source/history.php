@@ -37,7 +37,9 @@ $result = $conn->query($sql);
                     <td><?php echo $row['student_nic']; ?></td>
                     <td><?php echo $row['handover_date']; ?></td>
                     <td><?php echo $row['returned_date']; ?></td>
-                    <a href='php_controllers/history_delete_data.php?auto_id={$row['auto_id']}' class='btn btn-danger'>Delete</a>
+                    <td>
+                        <a href='php_controllers/history_delete_data.php?auto_id={$row['auto_id']}' class='btn btn-danger'>Delete</a>
+                    </td>
                 </tr>
             <?php endwhile; ?>
         </tbody>

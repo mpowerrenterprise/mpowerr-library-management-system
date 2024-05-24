@@ -78,7 +78,7 @@ $result = $conn->query($sql);
                 <th scope="col">Book ISBN No</th>
                 <th scope="col">Student Nic</th>
                 <th scope="col">Handover Date</th>
-                <th scope="col">Returned</th>
+                <th scope="col">Return</th>
             </tr>
         </thead>
         <tbody>
@@ -90,7 +90,7 @@ $result = $conn->query($sql);
                     <td>
                         <form method="POST" action="php_controllers/return.php">
                             <input type="hidden" name="auto_id" value="<?php echo $row['auto_id']; ?>">
-                            <button type="submit" class="btn btn-primary">Returned</button>
+                            <button type="submit" class="btn btn-primary">Return</button>
                         </form>
                     </td>
                 </tr>

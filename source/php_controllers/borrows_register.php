@@ -22,8 +22,12 @@ if (isset($_POST['Book_ISBN_No'], $_POST['Student_Nic_No'], $_POST['Handover_Dat
     $handover_date = $_POST['Handover_Date'];
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO borrows (book_isbn_no, student_nic, handover_date) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $book_isbn_no, $student_nic, $handover_date);
+    $stmt = $conn->prepare("INSERT INTO borrows (book_isbn_no, student_nic, handover_date) VALUES (?, ?, ?)");
+    if ($stmt === false) {
+        die('Error preparing the SQL statement: ' . $conn->error);
+    }
+
+    $stmt->bind_param("sss", $book_isbn_no, $student_nic, $handover_date);
 
     // Execute the statement
     if ($stmt->execute()) {
