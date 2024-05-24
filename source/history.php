@@ -28,6 +28,7 @@ $result = $conn->query($sql);
                 <th scope="col">Student Nic</th>
                 <th scope="col">Handover Date</th>
                 <th scope="col">Returned Date</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -38,7 +39,7 @@ $result = $conn->query($sql);
                     <td><?php echo $row['handover_date']; ?></td>
                     <td><?php echo $row['returned_date']; ?></td>
                     <td>
-                        <a href='php_controllers/history_delete_data.php?auto_id={$row['auto_id']}' class='btn btn-danger'>Delete</a>
+                        <a href='php_controllers/history_delete_data.php?auto_id=<?php echo $row["auto_id"]; ?>' class='btn btn-danger'>Delete</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
