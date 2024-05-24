@@ -2,7 +2,7 @@
 
 ## Introduction
 
-  #### The Mpowerr Management System is a comprehensive library management solution developed using HTML, CSS, JavaScript, and PHP. This system is designed to streamline and simplify the process of managing a library, providing an efficient and user-friendly interface for both library staff and patrons.
+  ### The Mpowerr Management System is a comprehensive library management solution developed using HTML, CSS, JavaScript, and PHP. This system is designed to streamline and simplify the process of managing a library, providing an efficient and user-friendly interface for both library staff and patrons.
 
 ## Key Features
 
@@ -53,3 +53,16 @@
   ### History Page 
   
   ![history](https://github.com/mpowerrofficial/mpowerr-library-management-system/assets/106969157/cc4471be-a0db-40a6-bd0a-91be4a41381d)
+
+## Access the Application:
+
+- Open your web browser and navigate to http://localhost/mpowerr-management-system
+
+## Usage
+#### Admin Panel
+
+- Login: Admins can log in using their credentials.
+- Dashboard: Overview of the library's status, including the number of books, members, and active borrows.
+- Book Management: Add new books, update book details, delete books, and search for books.
+- Member Management: Register new members, update member details, and view member information.
+- Borrow and Return: Manage the borrowing and returning process, including tracking due dates and overdue books.
