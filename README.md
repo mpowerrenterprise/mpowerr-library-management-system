@@ -42,7 +42,7 @@
   
   ![student_management](https://github.com/mpowerrofficial/mpowerr-library-management-system/assets/106969157/1a7b9f33-ec5b-494a-8220-33d0e4a4f14a)
   
-  ### Books Management Pags 
+  ### Books Management Page
   
   ![books_management](https://github.com/mpowerrofficial/mpowerr-library-management-system/assets/106969157/16db48e8-835d-4f57-9757-7d6385cde4bd)
   
